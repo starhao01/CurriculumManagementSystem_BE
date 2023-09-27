@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+bkAyvjNkg4JRxnR+zer1BVedQOkdoBK4tkicK3q8KlTlb2Jbd6RVz3jnMyEdqIqQYeGuBH92PwfdPNMvFiqww==",
+  "dgSpecHash": "WMfYr5CsMYkuQr5rDs63pd0bMz0cgFsTzXpL2srAkEs263V9OIA1svb+/9swLP8r3NDA0JXIY1tem/rjMSVqDw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\admin\\source\\repos\\CurriculumManagementSystem_BE\\BusinessObject\\BusinessObject.csproj",
+  "projectFilePath": "D:\\FULearning\\Fall2023\\SEP490\\Project\\CurriculumManagementSystem_BE\\CurriculumManagementSystem_BE\\BusinessObject\\BusinessObject.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

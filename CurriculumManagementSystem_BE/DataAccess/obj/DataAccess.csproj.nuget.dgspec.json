@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\source\\repos\\CurriculumManagementSystem_BE\\DataAccess\\DataAccess.csproj": {}
+    "D:\\FULearning\\Fall2023\\SEP490\\Project\\CurriculumManagementSystem_BE\\CurriculumManagementSystem_BE\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\source\\repos\\CurriculumManagementSystem_BE\\DataAccess\\DataAccess.csproj": {
+    "D:\\FULearning\\Fall2023\\SEP490\\Project\\CurriculumManagementSystem_BE\\CurriculumManagementSystem_BE\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\source\\repos\\CurriculumManagementSystem_BE\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\FULearning\\Fall2023\\SEP490\\Project\\CurriculumManagementSystem_BE\\CurriculumManagementSystem_BE\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\admin\\source\\repos\\CurriculumManagementSystem_BE\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\source\\repos\\CurriculumManagementSystem_BE\\DataAccess\\obj\\",
+        "projectPath": "D:\\FULearning\\Fall2023\\SEP490\\Project\\CurriculumManagementSystem_BE\\CurriculumManagementSystem_BE\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "D:\\FULearning\\Fall2023\\SEP490\\Project\\CurriculumManagementSystem_BE\\CurriculumManagementSystem_BE\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,7 +45,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -58,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -8,15 +8,13 @@ using System.Threading.Tasks;
 
 namespace BusinessObject
 {
-    public class MajorGroup
+    public class LearningResource
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int major_id { get; set;}
-        [Required, MaxLength(10)]
-        public string major_code { get; set;}
-        [Required, MaxLength(50)]
-        public string major_name { get; set;}
+        public int learning_resource_id { get; set; }
         [Required]
-        public string major_status { get; set;}
+        public string learning_resource_type { get; set; }
+
+        public virtual ICollection<Material> materials { get; set; }
     }
 }

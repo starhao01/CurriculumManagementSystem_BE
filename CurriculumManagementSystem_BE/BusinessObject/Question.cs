@@ -16,6 +16,8 @@ namespace BusinessObject
         public string question_name { get; set; }
         [Required]
         public string question_type { get; set;}
+        [ForeignKey(nameof(Quiz))]
+        public int quiz_id { get; set; }
         [Required]
         public string answers_1 { get; set; }
         [Required]
@@ -26,5 +28,7 @@ namespace BusinessObject
         public string answers_4 { get; set; }
         [Required]
         public string correct_answer { get; set; }
+
+        public virtual Quiz Quiz { get; set; }
     }
 }

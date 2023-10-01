@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace BusinessObject
 {
-    public class Quiz
+    public class CurriculumSubject
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int quiz_id { get; set; }
-        [Required] 
-        public string quiz_name { get; set; }
         [ForeignKey(nameof(Subject))]
         public int subject_id { get; set; }
-        public virtual ICollection<Question> Questions { get; set; }
+        [ForeignKey(nameof(Curriculum))]
+        public int curriculum_id { get; set; }
+        [Required]
+        public int term_no { get; set; }
 
-        public virtual Subject Subject { get; set; }
+        public virtual Curriculum Curriculums { get; set; }
+        public virtual Subject Subjects { get; set; }
     }
 }

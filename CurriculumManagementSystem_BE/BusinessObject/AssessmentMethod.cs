@@ -15,9 +15,13 @@ namespace BusinessObject
         public int assessment_method_id { get; set; }
         [Required]
         public string assessment_method_component { get; set; }
-        [Required]
-        public string assessment_method_type { get; set; }
-        [AllowNull]
-        public string? assessment_method_description { get; set; }
+        [ForeignKey(nameof(AssessmentType))]
+        public int assessment_type_id { get; set; }
+        
+        public virtual AssessmentType AssessmentTypes { get; set; }
+        public virtual ICollection<Subject> Subjects { get; set; }
+        public virtual ICollection<GradingStruture> GradingStrutures { get; set; }
+
+
     }
 }

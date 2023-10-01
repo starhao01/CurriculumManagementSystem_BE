@@ -11,6 +11,8 @@ namespace BusinessObject
         [Required]
         [StringLength(50)]
         public string schedule_content { get; set; }
+        [ForeignKey(nameof(Syllabus))]
+        public int syllabus_id { get; set; }
         [Required]
         public string ITU { get; set; }
         [Required]
@@ -25,5 +27,29 @@ namespace BusinessObject
         public string? student_material_link { get; set; }
         [AllowNull]
         public string? lecturer_material_link { get; set; }
+        [ForeignKey(nameof(ClassSessionType))]
+        public int class_session_type_id { get; set; }
+        //check
+        [Required]
+        public bool remote_learning  { get; set; }
+        [Required]
+        public bool ass_defense { get; set; }
+        [Required]
+        public bool eos_exam { get; set; }
+        [Required]
+        public bool video_learning { get; set; }
+        [Required]
+        public bool IVQ { get; set; }
+        [Required]
+        public bool online_lab { get; set; }
+        [Required]
+        public bool online_test { get; set; }
+        [Required]
+        public bool assigment { get; set; }
+
+        public virtual Syllabus Syllabuss { get; set; }
+        public virtual ClassSessionType SessionType { get; set; }
+        
+        public virtual ICollection<TimeAllocation> TimeAllocation { get; set; } 
     }
 }

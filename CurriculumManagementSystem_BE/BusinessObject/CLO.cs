@@ -15,7 +15,15 @@ namespace BusinessObject
         public int CLO_id { get; set; }
         [Required] 
         public string CLO_name { get; set; }
+        [ForeignKey(nameof(Syllabus))]
+        public int syllabus_id { get; set; }
         [AllowNull] 
-        public string? CLO_description { get; set; }   
+        public string? CLO_description { get; set; }  
+        
+        public virtual Syllabus syllabus { get; set; }
+        
+        public virtual ICollection<TimeAllocation> TimeAllocations { get; set; }
+        public virtual ICollection<GradingCLO> GradingCLOs { get; set; }    
+
     }
 }

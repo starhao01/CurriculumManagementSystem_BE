@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace BusinessObject
 {
-    public class Role
+    public class AssessmentType
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int role_id { get; set; }
-        [Required, MaxLength(50)] 
-        public string role_name { get; set; }
+        public int assessment_type_id { get; set; }
+        [Required]
+        public string assessment_type_name { get; set; }
 
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<AssessmentMethod> assessment_methods { get; set;}
     }
 }

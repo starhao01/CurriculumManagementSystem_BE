@@ -20,5 +20,7 @@ namespace BusinessObject
         public DateTime semester_end_date { get; set; }
         [Required]
         public int school_year { get; set; }
+
+        public virtual ICollection<SemesterPlan> semesters { get; set; }
     }
 }

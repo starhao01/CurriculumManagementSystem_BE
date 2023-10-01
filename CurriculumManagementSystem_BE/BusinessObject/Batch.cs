@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace BusinessObject
 {
-    public class Role
+    public class Batch
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int role_id { get; set; }
-        [Required, MaxLength(50)] 
-        public string role_name { get; set; }
+        public int batch_id { get; set; }
+        [Required] 
+        public string batch_name { get; set; }
 
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<Curriculum> Curriculums { get; set;}
     }
 }

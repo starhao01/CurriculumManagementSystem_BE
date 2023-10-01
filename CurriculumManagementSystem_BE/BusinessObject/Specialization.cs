@@ -17,7 +17,17 @@ namespace BusinessObject
         public string specialization_name { get; set; }
         [AllowNull]
         public string? specialization_description { get; set; }
+        [ForeignKey(nameof(Major))]
+        public int major_id { get; set; }
         [Required]
         public string specialization_status { get; set; }
+
+        public virtual Major Majors { get; set; }
+
+        public virtual ICollection<Combo> Combos { get; set; }
+
+        public virtual ICollection<Curriculum> Curriculums { get; set; }
+        public virtual ICollection<SpecializationSubject> SpecializationSubjects { get; set; }
+
     }
 }

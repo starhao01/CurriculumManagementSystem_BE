@@ -17,6 +17,8 @@ namespace BusinessObject
         public decimal grading_weight { get; set; }
         [Required]
         public int grading_part { get; set; }
+        [ForeignKey(nameof(Syllabus))]
+        public int syllabus_id { get; set; }
         [Required]
         public int minimum_value_to_meet_completion { get; set; }
         [Required]
@@ -24,10 +26,15 @@ namespace BusinessObject
         [Required]
         public string scope_knowledge { get; set; }
         [Required]
-        public string how_to_granding { get; set;}
+        public string how_granding_structure { get; set;}
+        [ForeignKey(nameof(AssessmentMethod))]
+        public int assessment_method_id { get; set; }
         [AllowNull]
         public string? grading_note { get; set; }
-        [Required]
-        public string grading_reference { get; set; }
+        
+        public virtual Syllabus syllabus { get; set;}
+        public virtual AssessmentMethod assessmentMethod { get; set; }
+        
+        public virtual ICollection<GradingCLO> GradingCLOs { get; set; }    
     }
 }

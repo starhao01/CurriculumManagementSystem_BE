@@ -14,5 +14,7 @@ namespace BusinessObject
         public int class_session_type_id { get; set; }
         [Required] 
         public string class_session_type_name { get; set; }  
+
+        public virtual ICollection<Session> Sessions { get; set; }
     }
 }

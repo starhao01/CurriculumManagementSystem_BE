@@ -8,13 +8,16 @@ using System.Threading.Tasks;
 
 namespace BusinessObject
 {
-    public class Role
+    public class PreRequisite
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int role_id { get; set; }
-        [Required, MaxLength(50)] 
-        public string role_name { get; set; }
+        public int pre_requisite_id { get; set; }
+        [Required]
+        public string pre_requisite_name { get; set; }
+        [ForeignKey(nameof(PreRequisiteType))]
+        public int pre_requisite_type_id { get; set; }
 
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<Subject> subjects { get; set; }  
+
     }
 }

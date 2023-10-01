@@ -21,8 +21,12 @@ namespace BusinessObject
         public string? material_ISBN { get; set;}
         [Required]
         public string material_type { get; set;}
+        [ForeignKey(nameof(Syllabus))]
+        public int syllabus_id { get; set; }
         [AllowNull]
         public string? material_note { get; set;}
+        [ForeignKey(nameof(LearningResource))]
+        public int learning_resource_id { get; set; }
         [AllowNull]
         public string? material_author { get; set;}
         [AllowNull]
@@ -31,5 +35,8 @@ namespace BusinessObject
         public DateTime? material_published_date { get; set;}
         [AllowNull]
         public string? material_edition { get; set;} 
+
+        public virtual Syllabus Syllabuss { get; set; }
+        public virtual LearningResource LearningResources { get; set; }
     }
 }

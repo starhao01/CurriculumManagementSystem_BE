@@ -19,7 +19,7 @@ namespace BusinessObject
         public string english_curriculum_name { get; set; }
         [AllowNull]
         public string curriculum_description { get; set; }
-        [ForeignKey(nameof(Specialization))]
+        [ForeignKey("Specialization")]
         public int specialization_id { get; set; }
         [Required]
         public string vocational_code { get; set; }
@@ -27,7 +27,7 @@ namespace BusinessObject
         public string vocational_name { get;set; }
         [Required]
         public string english_vocational_name { get;set; }
-        [ForeignKey(nameof (Batch))]
+        [ForeignKey("Batch")]
         public int batch_id { get; set;}
         [Required]
         public int decision_No { get;set; }

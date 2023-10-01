@@ -23,37 +23,37 @@ namespace BusinessObject
             optionsBuilder.UseSqlServer(con);
         }
 
-        public virtual DbSet<AssessmentMethod> AssessmentMethods { get; set; }
-        public virtual DbSet<AssessmentType> AssessmentTypes { get; set; }
-        public virtual DbSet<Batch> Batches { get; set; }
-        public virtual DbSet<ClassSessionType> ClassSessionTypes { get; set; }
-        public virtual DbSet<CLO> CLOs { get; set; }
-        public virtual DbSet<Combo> Combos { get; set; }
-        public virtual DbSet<ComboSubject> ComboSubjects { get; set; }
-        public virtual DbSet<Curriculum> Curriculums { get; set; }
-        public virtual DbSet<CurriculumSubject> CurriculumSubjects { get; set; }
-        public virtual DbSet<GradingCLO> GradingCLOs { get; set; }
-        public virtual DbSet<GradingStruture> GradingStrutures { get; set; }
-        public virtual DbSet<LearningMethod> LearningMethods { get; set; }
-        public virtual DbSet<LearningResource> LearningResources { get; set; }
-        public virtual DbSet<Major> Majors { get; set; }
-        public virtual DbSet<Material> Materials { get; set; }
-        public virtual DbSet<PLOMapping> PLOMappings { get; set; }
+        public virtual DbSet<AssessmentMethod> AssessmentMethod { get; set; }
+        public virtual DbSet<AssessmentType> AssessmentType { get; set; }
+        public virtual DbSet<Batch> Batche { get; set; }
+        public virtual DbSet<ClassSessionType> ClassSessionType { get; set; }
+        public virtual DbSet<CLO> CLO { get; set; }
+        public virtual DbSet<Combo> Combo { get; set; }
+        public virtual DbSet<ComboSubject> ComboSubject { get; set; }
+        public virtual DbSet<Curriculum> Curriculum { get; set; }
+        public virtual DbSet<CurriculumSubject> CurriculumSubject { get; set; }
+        public virtual DbSet<GradingCLO> GradingCLO { get; set; }
+        public virtual DbSet<GradingStruture> GradingStruture { get; set; }
+        public virtual DbSet<LearningMethod> LearningMethod { get; set; }
+        public virtual DbSet<LearningResource> LearningResource { get; set; }
+        public virtual DbSet<Major> Major { get; set; }
+        public virtual DbSet<Material> Material { get; set; }
+        public virtual DbSet<PLOMapping> PLOMapping { get; set; }
         public virtual DbSet<PLOs> PLOs { get; set; }
-        public virtual DbSet<PreRequisite> PreRequisites { get; set; }
-        public virtual DbSet<PreRequisiteType> PreRequisiteTypes { get; set; }
-        public virtual DbSet<Question> Questions { get; set; }
-        public virtual DbSet<Quiz> Quizzes { get; set; }
-        public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<Semester> Semesters { get; set; }
-        public virtual DbSet<SemesterPlan> SemesterPlans { get; set; }
-        public virtual DbSet<Session> Sessions { get; set; }
-        public virtual DbSet<Specialization> Specializations { get; set; }
-        public virtual DbSet<SpecializationSubject> SpecializationSubjects { get; set; }
-        public virtual DbSet<Subject> Subjects { get; set; }
+        public virtual DbSet<PreRequisite> PreRequisite { get; set; }
+        public virtual DbSet<PreRequisiteType> PreRequisiteType { get; set; }
+        public virtual DbSet<Question> Question { get; set; }
+        public virtual DbSet<Quiz> Quiz { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<Semester> Semester { get; set; }
+        public virtual DbSet<SemesterPlan> SemesterPlan { get; set; }
+        public virtual DbSet<Session> Session { get; set; }
+        public virtual DbSet<Specialization> Specialization { get; set; }
+        public virtual DbSet<SpecializationSubject> SpecializationSubject { get; set; }
+        public virtual DbSet<Subject> Subject { get; set; }
         public virtual DbSet<Syllabus> Syllabus { get; set; }
-        public virtual DbSet<TimeAllocation> TimeAllocations { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<TimeAllocation> TimeAllocation { get; set; }
+        public virtual DbSet<User> User { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -80,6 +80,30 @@ namespace BusinessObject
             modelBuilder.Entity<TimeAllocation>()
                .HasKey(ba => new { ba.CLO_id, ba.session_id });
 
+            //
+            modelBuilder.Entity<Combo>()
+                .HasOne(x => x.Specialization)
+                .WithMany(y => y.Combos)
+                .HasForeignKey(x => x.specialization_id)
+                .OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<GradingStruture>()
+                .HasOne(x => x.Syllabus)
+                .WithMany(y => y.Gradings)
+                .HasForeignKey(x => x.syllabus_id)
+                .OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<GradingCLO>()
+                .HasOne(x => x.GradingStrutures)
+                .WithMany(y => y.GradingCLOs)
+                .HasForeignKey(x => x.grading_id)
+                .OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<TimeAllocation>()
+                .HasOne(x => x.Sessions)
+                .WithMany(y => y.TimeAllocation)
+                .HasForeignKey(x => x.session_id)
+                .OnDelete(DeleteBehavior.ClientSetNull);
             //create new Data in table
             modelBuilder.Entity<Role>().HasData(
                 new Role { role_id = 1, role_name = "Dispatcher" },

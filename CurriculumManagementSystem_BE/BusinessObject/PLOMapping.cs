@@ -9,12 +9,12 @@ namespace BusinessObject
 {
     public class PLOMapping
     {
-        [ForeignKey(nameof(PLOs))]
+        [ForeignKey("PLOs")]
         public int PLO_id { get; set; }
-        [ForeignKey(nameof(Subject))]
+        [ForeignKey("Subject")]
         public int subject_id { get; set; }
 
-        public virtual PLOs PLO { get; set; }
+        public virtual PLOs PLOs { get; set; }
         public virtual Subject Subjects { get; set; }
     }
 }

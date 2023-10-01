@@ -14,7 +14,7 @@ namespace BusinessObject
         public int quiz_id { get; set; }
         [Required] 
         public string quiz_name { get; set; }
-        [ForeignKey(nameof(Subject))]
+        [ForeignKey("Subject")]
         public int subject_id { get; set; }
         public virtual ICollection<Question> Questions { get; set; }
 

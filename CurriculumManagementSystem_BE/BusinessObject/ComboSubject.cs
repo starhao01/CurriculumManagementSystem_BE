@@ -9,9 +9,12 @@ namespace BusinessObject
 {
     public class ComboSubject
     {
-        [ForeignKey(nameof(Subject))]
+        [ForeignKey("Subject")]
         public int subject_id { get; set; }
-        [ForeignKey(nameof(Combo))]
+        [ForeignKey("Combo")]
         public int combo_id { get; set; }
+
+        public virtual Subject Subject { get; set; }
+        public virtual Combo Combo { get; set; }
     }
 }

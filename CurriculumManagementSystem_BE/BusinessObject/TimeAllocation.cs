@@ -9,9 +9,9 @@ namespace BusinessObject
 {
     public class TimeAllocation
     {
-        [ForeignKey(nameof(CLO))]
+        [ForeignKey("CLO")]
         public int CLO_id { get; set; }
-        [ForeignKey(nameof(Session))]
+        [ForeignKey("Session")]
         public int session_id { get; set; }
         //cần thêm dữ liệu????
 

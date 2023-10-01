@@ -18,10 +18,10 @@ namespace BusinessObject
         public string subject_name { get; set;}
         [Required]
         public string english_subject_name { get; set;}
-        [ForeignKey(nameof(LearningMethod))]
+        [ForeignKey("LearningMethod")]
         public int learning_method_id { get; set; }
         
-        [ForeignKey(nameof(AssessmentMethod))]
+        [ForeignKey("AssessmentMethod")]
         public int assessment_method_id { get;set; }
         [Required]
         public int credit { get; set; }
@@ -32,8 +32,8 @@ namespace BusinessObject
 
         public virtual ICollection<Quiz> Quizzes { get; set; }
         public virtual ICollection<Syllabus> Syllabus { get; set;}
-        public virtual LearningMethod learningMethod { get; set; }
-        public virtual AssessmentMethod assessmentMethod { get; set; }
+        public virtual LearningMethod LearningMethod { get; set; }
+        public virtual AssessmentMethod AssessmentMethod { get; set; }
         public virtual ICollection<CurriculumSubject> CurriculumSubjects { get; set; }
         public virtual ICollection<SpecializationSubject> SpecializationSubjects { get; set; }
         public virtual ICollection<ComboSubject> ComboSubjects { get; set; }    

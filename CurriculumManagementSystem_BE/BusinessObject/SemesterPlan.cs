@@ -10,16 +10,16 @@ namespace BusinessObject
 {
     public class SemesterPlan
     {
-        [ForeignKey(nameof(Curriculum))]
+        [ForeignKey("Curriculum")]
         public int curriculum_id { get; set; }
-        [ForeignKey(nameof(Semester))]
+        [ForeignKey("Semester")]
         public int semester_id { get; set; }
         [Required]
         public string semester_plan_code { get; set; }
         [Required]
         public string semester_plan_name { get; set; }
 
-        public virtual Curriculum curriculum { get; set; }
-        public virtual Semester semester { get; set; }
+        public virtual Curriculum Curriculum { get; set; }
+        public virtual Semester Semester { get; set; }
     }
 }

@@ -14,10 +14,11 @@ namespace BusinessObject
         public int pre_requisite_id { get; set; }
         [Required]
         public string pre_requisite_name { get; set; }
-        [ForeignKey(nameof(PreRequisiteType))]
+        [ForeignKey("PreRequisiteType")]
         public int pre_requisite_type_id { get; set; }
 
         public virtual ICollection<Subject> subjects { get; set; }  
+        public virtual PreRequisiteType PreRequisiteType { get; set; }
 
     }
 }

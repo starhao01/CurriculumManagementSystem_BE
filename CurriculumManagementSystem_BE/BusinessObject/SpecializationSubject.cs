@@ -9,12 +9,12 @@ namespace BusinessObject
 {
     public class SpecializationSubject
     {
-        [ForeignKey(nameof(Specialization))]
+        [ForeignKey("Specialization")]
         public int specialization_id { get; set; }
-        [ForeignKey(nameof(Subject))]
+        [ForeignKey("Subject")]
         public int subject_id { get; set; }
 
-        public virtual Specialization specialization { get; set; }  
-        public virtual Subject subject { get; set; }
+        public virtual Specialization Specialization { get; set; }  
+        public virtual Subject Subject { get; set; }
     }
 }

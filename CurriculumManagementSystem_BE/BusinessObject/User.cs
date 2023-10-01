@@ -23,7 +23,7 @@ namespace BusinessObject
         public int user_phone { get; set;}
         [Required, MaxLength(255)]
         public string full_name { get; set; }
-        [ForeignKey(nameof(Role))]
+        [ForeignKey("Role")]
         public int role_id { get; set; }
         [Required]
         public string user_status { get; set; }

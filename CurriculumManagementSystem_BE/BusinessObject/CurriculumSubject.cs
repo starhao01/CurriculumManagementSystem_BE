@@ -10,9 +10,9 @@ namespace BusinessObject
 {
     public class CurriculumSubject
     {
-        [ForeignKey(nameof(Subject))]
+        [ForeignKey("Subject")]
         public int subject_id { get; set; }
-        [ForeignKey(nameof(Curriculum))]
+        [ForeignKey("Curriculum")]
         public int curriculum_id { get; set; }
         [Required]
         public int term_no { get; set; }

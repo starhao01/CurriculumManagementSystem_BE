@@ -15,7 +15,7 @@ namespace BusinessObject
         public int PLO_id { get; set; }
         [Required] 
         public string PLO_name { get; set; }
-        [ForeignKey(nameof(Curriculum))]
+        [ForeignKey("Curriculum")]
         public int curriculum_id { get; set; }
         
         [AllowNull] 

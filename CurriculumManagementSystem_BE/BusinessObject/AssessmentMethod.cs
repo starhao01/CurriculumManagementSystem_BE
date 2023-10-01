@@ -15,7 +15,7 @@ namespace BusinessObject
         public int assessment_method_id { get; set; }
         [Required]
         public string assessment_method_component { get; set; }
-        [ForeignKey(nameof(AssessmentType))]
+        [ForeignKey("AssessmentType")]
         public int assessment_type_id { get; set; }
         
         public virtual AssessmentType AssessmentTypes { get; set; }

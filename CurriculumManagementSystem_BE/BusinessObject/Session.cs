@@ -11,7 +11,7 @@ namespace BusinessObject
         [Required]
         [StringLength(50)]
         public string schedule_content { get; set; }
-        [ForeignKey(nameof(Syllabus))]
+        [ForeignKey("Syllabus")]
         public int syllabus_id { get; set; }
         [Required]
         public string ITU { get; set; }
@@ -27,7 +27,7 @@ namespace BusinessObject
         public string? student_material_link { get; set; }
         [AllowNull]
         public string? lecturer_material_link { get; set; }
-        [ForeignKey(nameof(ClassSessionType))]
+        [ForeignKey("ClassSessionType")]
         public int class_session_type_id { get; set; }
         //check
         [Required]

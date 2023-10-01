@@ -9,9 +9,9 @@ namespace BusinessObject
 {
     public class GradingCLO
     {
-        [ForeignKey(nameof(GradingStruture))]
+        [ForeignKey("GradingStruture")]
         public int grading_id { get; set; }
-        [ForeignKey(nameof(CLO))]
+        [ForeignKey("CLO")]
         public int CLO_id { get; set;}
 
         public virtual GradingStruture GradingStrutures { get; set; }
